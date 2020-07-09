@@ -1,0 +1,13 @@
+environment: NODE_CONFIG_ENV
+
+# Express
+server:
+  port: SERVER_PORT
+
+log:
+  level: LOG_LEVEL
+  timestamp: LOG_TIMESTAMP
+
+# Mongoose
+db:
+  uri: MONGO_URI

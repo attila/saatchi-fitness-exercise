@@ -1,0 +1,33 @@
+environment: sandbox
+
+# Express
+server:
+  port: 3000
+
+session:
+  secret: very-secret
+  proxy: true
+  resave: true
+  saveUninitialized: true
+
+# Password hashing (see nodejs/crypto)
+passwords:
+  digest: sha512
+  iterations: 10000
+  keylen: 1024
+  saltLength: 64
+
+# Mongoose
+db:
+  uri: mongodb://127.0.0.1:27017/sfe
+  options:
+    keepAlive: true
+    keepAliveInitialDelay: 300000
+    useNewUrlParser: true
+    useUnifiedTopology: true
+
+# Logging
+log:
+  level: info
+  prettyPrint: false
+  timestamp: false

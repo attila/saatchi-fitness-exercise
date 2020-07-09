@@ -1,0 +1,326 @@
+{
+	"info": {
+		"_postman_id": "c9d830cf-28f8-4908-b1f8-e052dac3bc18",
+		"name": "SFE",
+		"description": "Saatchi Fitness Exercise",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Log in user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"admin\",\n\t\"password\": \"password\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/login",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log out",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"foobar\",\n\t\"password\": \"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/logout",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create account",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\": \"janedoe\",\n\t\"password\": \"1234\",\n\t\"isAdmin\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/account",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete account by name",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/account/:name",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"account",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "xytrax"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get account by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/account/:name",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"account",
+								":name"
+							],
+							"variable": [
+								{
+									"key": "name",
+									"value": "foobar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all accounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/accounts",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Entry",
+			"item": [
+				{
+					"name": "Create entry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"participant\": \"janedoe\",\n\t\"exercise\": \"swimming\",\n\t\"duration\": 30,\n\t\"date\": \"2020-07-07\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/entry",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"entry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete entry by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/entry/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"entry",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Entry ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update entry by ID",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"exercise\": \"swimming\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BASE_URL}}/entry/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"entry",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Entry ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get entry by ID",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/entry/:id",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"entry",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "",
+									"description": "Entry ID"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all entries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BASE_URL}}/entries",
+							"host": [
+								"{{BASE_URL}}"
+							],
+							"path": [
+								"entries"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2a6c5192-21ec-4484-957a-e65d78df840c",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "a14a3e88-d59a-4861-80ca-f8509aad4419",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "cf6addd0-e47d-4fbd-950d-f795d160d9a2",
+			"key": "BASE_URL",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+  mongo:
+    image: library/mongo:4.2.8
+    ports:
+      - 27017
+    volumes:
+      - ./mongodata:/mongodata:cached
+
+  sfe:
+    build: .
+    ports:
+      - 3000:3000
+    environment:
+      LOG_LEVEL: debug
+      NODE_CONFIG_ENV: sandbox
+      NODE_ENV: production
+      MONGO_URI: mongodb://mongo:27017/sfe
+    volumes:
+      - .:/app:cached
+    command: sh -c 'yarn run nodemon src/server.js -e js,yml'
+    depends_on:
+      - mongo

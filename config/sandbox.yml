@@ -1,0 +1,8 @@
+environment: sandbox
+
+log:
+  level: debug
+  prettyPrint:
+    translateTime: true
+    levelFirst: true
+  timestamp: true
